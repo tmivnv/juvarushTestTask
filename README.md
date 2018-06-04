@@ -1,4 +1,4 @@
-# juvarushTestTask
+# javarushTestTask
 Test task for internship
 
 index at localhost:8081
