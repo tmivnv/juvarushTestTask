@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.config.Constants;
 import com.example.demo.dao.BookRepository;
 import com.example.demo.entities.Book;
 import com.example.demo.service.BookService;
@@ -18,8 +19,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> findAllBooks(Long page) {
         List<Book> books = repository.findAll();
-        int fromIndex = (int)(0+10*(page-1));
-        int toIndex = (int)(10*page) > books.size() ? books.size() : (int)(10*page);
+        int fromIndex = (int)(Constants.LINES_ON_PAGE *(page-1));
+        int toIndex = (int)(Constants.LINES_ON_PAGE*page) > books.size() ? books.size() : (int)(Constants.LINES_ON_PAGE*page);
         return books.subList(fromIndex, toIndex);
     }
 

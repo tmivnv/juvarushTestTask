@@ -40,7 +40,7 @@ public class BookController {
     @ResponseBody
     public List<Book> searchBook(@RequestBody SearchRequest searchRequest)
     {
-        return service.searchBooksByTitle(searchRequest.title);
+        return service.searchBooksByTitle(searchRequest.getTitle());
 
     }
 
